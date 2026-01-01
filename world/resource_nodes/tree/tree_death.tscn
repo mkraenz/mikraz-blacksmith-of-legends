@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://50at58g2mqb1"]
 
-[ext_resource type="Shader" path="res://effects/dissolve.gdshader" id="1_8t3r1"]
-[ext_resource type="Script" path="res://effects/death-effect-base.gd" id="3_5us18"]
+[ext_resource type="Shader" uid="uid://vmc1cfydmdn" path="res://effects/dissolve.gdshader" id="1_8t3r1"]
+[ext_resource type="Script" uid="uid://dj2ld1g1vqx6l" path="res://effects/death-effect-base.gd" id="3_5us18"]
 [ext_resource type="AudioStream" uid="uid://2vbb6efqqtd2" path="res://third-party/sounds/wood/wood-breaking.mp3" id="3_oxtmi"]
 [ext_resource type="Texture2D" uid="uid://drtgk3t0q62h0" path="res://world/resource_nodes/tree/tree.tres" id="3_x4ito"]
 
@@ -75,28 +75,28 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rfbin"]
 _data = {
-"RESET": SubResource("Animation_fsrip"),
-"default": SubResource("Animation_vsf4l")
+&"RESET": SubResource("Animation_fsrip"),
+&"default": SubResource("Animation_vsf4l")
 }
 
 [node name="TreeDeath" type="Node2D"]
 material = SubResource("ShaderMaterial_rmsbm")
-position = Vector2(0, -8)
 script = ExtResource("3_5us18")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_yxfv5")
 position = Vector2(0, -7)
 texture = ExtResource("3_x4ito")
+offset = Vector2(0, -8)
 
 [node name="Audio" type="AudioStreamPlayer2D" parent="."]
 bus = &"Sounds"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "default"
 libraries = {
-"": SubResource("AnimationLibrary_rfbin")
+&"": SubResource("AnimationLibrary_rfbin")
 }
+autoplay = "default"
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 emitting = false
