@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ckukkr47g77eh" path="res://world/resource_nodes/beehive/beehive.gd" id="1_tlwyh"]
 [ext_resource type="Texture2D" uid="uid://cj30cdxnfbkwi" path="res://world/resource_nodes/beehive/beehive.tres" id="1_y60d7"]
 [ext_resource type="Shader" uid="uid://x41bm7r36pqt" path="res://effects/blink.gdshader" id="2_46crh"]
-[ext_resource type="Script" uid="uid://c5h01l77a85e3" path="res://common/Stats.gd" id="2_txv7b"]
+[ext_resource type="Script" uid="uid://c5h01l77a85e3" path="res://common/stats/stats.gd" id="2_txv7b"]
 [ext_resource type="AudioStream" uid="uid://dxsv2jaqwel1x" path="res://assets/sounds/stone-breaking.mp3" id="3_t8rj8"]
 [ext_resource type="PackedScene" uid="uid://i5pg0rokc7h8" path="res://world/resource_nodes/common/healthbar/healthbar.tscn" id="4_tlwyh"]
 [ext_resource type="PackedScene" uid="uid://be52v685kfaec" path="res://world/resource_nodes/common/mining/mining.tscn" id="5_46crh"]

@@ -7,8 +7,8 @@ interface BuildingData {
 interface Building {
   label: { en: string; de: string };
   id: string;
-  /** id of corresponding script/scene in script.registry.ts */
-  script: string;
+  res_uid: string;
+  /** icon used in build menu */
   icon:
     | { type: "Texture2D"; res_path: `res://${string}` }
     | {
@@ -29,7 +29,7 @@ export const buildingData = {
   sawmill: {
     label: { en: "Sawmill", de: "Sägemühle" },
     id: "sawmill",
-    script: "sawmill_DgFJ2E",
+    res_uid: "uid://b43yygkrld0rh",
     icon: {
       type: "Texture2D",
       res_path: "res://assets/images/buzzsaw.png",
@@ -39,7 +39,7 @@ export const buildingData = {
   smelter: {
     label: { en: "Smelter", de: "Schmelzer" },
     id: "smelter",
-    script: "smelter_mx3GEc",
+    res_uid: "uid://bmsf4jrtokcvg",
     icon: {
       type: "Texture2D",
       res_path: "res://third-party/henry_lazarini/I_IronBar.png",
@@ -61,7 +61,7 @@ export const buildingData = {
   smithy: {
     label: { en: "Smithy", de: "Schmiede" },
     id: "smithy",
-    script: "smithy_2IVp6B",
+    res_uid: "uid://b43yygkrld0ry",
     icon: {
       type: "AtlasTexture",
       res_path: "res://assets/images/smithy.png",
@@ -81,7 +81,7 @@ export const buildingData = {
   charcoal_kiln: {
     label: { en: "Charcoal Kiln", de: "Köhler" },
     id: "charcoal_kiln",
-    script: "charcoal_kiln_gbuAXz",
+    res_uid: "uid://dbtbfpiho8sx1",
     icon: {
       type: "Texture2D",
       res_path: "res://third-party/henry_lazarini/I_Coal.png",

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://2i7xvgevpqmy" path="res://player/player.gd" id="1_qjkh3"]
 [ext_resource type="Texture2D" uid="uid://daevt8ai8xoht" path="res://third-party/Elthen/DwarfSpriteSheet1.3v.png" id="2_g6k8r"]
 [ext_resource type="AudioStream" uid="uid://b6w62pkixw4fr" path="res://third-party/sounds/swings/axe-swing.mp3" id="3_boad6"]
-[ext_resource type="Script" uid="uid://4qeft16wcoc1" path="res://player/ActionRadius.gd" id="4_rgyib"]
+[ext_resource type="Script" uid="uid://4qeft16wcoc1" path="res://player/action_radius.gd" id="4_rgyib"]
 [ext_resource type="PackedScene" uid="uid://b14qrhy5ybx0w" path="res://common/suck_radius/suck_radius.tscn" id="5_hg6s5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1hntc"]

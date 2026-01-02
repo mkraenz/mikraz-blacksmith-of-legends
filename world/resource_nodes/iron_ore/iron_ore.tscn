@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cy6wutdnyxv73" path="res://world/resource_nodes/iron_ore/iron_ore.gd" id="1_xtj8a"]
 [ext_resource type="PackedScene" uid="uid://i5pg0rokc7h8" path="res://world/resource_nodes/common/healthbar/healthbar.tscn" id="2_grutw"]
 [ext_resource type="Texture2D" uid="uid://bdapxssfugeaq" path="res://world/resource_nodes/iron_ore/iron_ore.atlastex" id="3_suxqc"]
-[ext_resource type="PackedScene" uid="uid://6b2lgtejwxtv" path="res://common/Stats.tscn" id="3_txvwt"]
+[ext_resource type="PackedScene" uid="uid://6b2lgtejwxtv" path="res://common/stats/stats.tscn" id="3_txvwt"]
 [ext_resource type="PackedScene" uid="uid://dibg57pg4emn7" path="res://world/resource_nodes/common/how_to_act.tscn" id="5_60koc"]
 [ext_resource type="AudioStream" uid="uid://dxsv2jaqwel1x" path="res://assets/sounds/stone-breaking.mp3" id="6_nh7i3"]
 [ext_resource type="PackedScene" uid="uid://be52v685kfaec" path="res://world/resource_nodes/common/mining/mining.tscn" id="8_duo8a"]

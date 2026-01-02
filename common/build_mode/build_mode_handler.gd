@@ -73,7 +73,7 @@ func _on_enter_build_mode(_building_id: String) -> void:
 	building_id = _building_id
 	var Scene := get_building_scene()
 	blueprint = Scene.instantiate()
-	blueprint.collision_layer = 0  # avoid pushing away objects with the blueprint
+	blueprint.collision_layer = 0 # avoid pushing away objects with the blueprint
 	blueprint.global_position = get_global_mouse_position()
 	blueprint_slot.add_child(blueprint)
 	scale_blueprint_collision_shape(blueprint_collision_shape_scale)
@@ -81,11 +81,8 @@ func _on_enter_build_mode(_building_id: String) -> void:
 
 
 func get_building_scene() -> PackedScene:
-	var script_id = gdata.get_building(building_id).script
-	if not script_id:
-		push_error("building_id is not initialized to an actual value.")
-		return
-	return load(gdata.scripts[script_id].res_path)
+	var uid: String = gdata.get_building(building_id).res_uid
+	return load(uid)
 
 
 func consume_resources(needs: Array) -> void:

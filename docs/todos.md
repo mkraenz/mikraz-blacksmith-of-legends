@@ -7,6 +7,7 @@
 - [x] Bug: on load, notifications don't get reset
 - [x] Bug: click Continue -> Pause -> exit to title -> New game. Then the quest log is duplicated
 - [x] Bug: cancelling an order does not hide the progress bar and doesn't stop the animation
+- [ ] Bug: cant see the required building materials for other buildings when requirements arent met. Thus dont know what to collect.
 - [x] refactor: extract more stuff from Production
 - [ ] options menu
   - [ ] key rebinding
