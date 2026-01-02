@@ -42,6 +42,7 @@ func update_anim_params() -> void:
 	if velocity.x != 0:
 		anim_tree["parameters/idle/blend_position"] = velocity.x
 		anim_tree["parameters/move/blend_position"] = velocity.x
+		anim_tree["parameters/attack/blend_position"] = velocity.x
 
 	if velocity == Vector2.ZERO:
 		anim_tree["parameters/conditions/idle"] = true

@@ -23,7 +23,9 @@
     - [x] buildings
     - [x] quests
 - [ ] some polish
-  - [ ] when hitting resource node, face the resource node
+  - [ ] death anim for beehive
+  - [x] when hitting resource node, face the resource node
+    - [x] when facing left away from any resource nodes and then hitting E, the anim plays the strike to the right
   - [ ] build menu icons
   - [ ] shadows -> <https://www.youtube.com/watch?v=nAZGUds9vnc>
   - [ ] sfx
