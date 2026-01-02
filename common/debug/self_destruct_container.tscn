@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cerm4b8ml14kp"]
+
+[ext_resource type="Script" uid="uid://c3bywmdfye2ac" path="res://common/debug/self_destruct_container.gd" id="1_jdely"]
+
+[node name="SelfDestructContainer" type="Node2D"]
+script = ExtResource("1_jdely")

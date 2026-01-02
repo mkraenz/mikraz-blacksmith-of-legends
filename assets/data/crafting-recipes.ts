@@ -10,7 +10,7 @@ interface Recipe {
   needs: NeededItem[];
   /** batch size. how many items of id get crafted in a single batch? */
   batch_size: number;
-  /** a tick is an ingame time duration given by a global timer (the ProductionTakt) */
+  /** a tick is an ingame time duration given by a Level's timer (the ProductionTakt) */
   duration_in_ticks: number;
 }
 

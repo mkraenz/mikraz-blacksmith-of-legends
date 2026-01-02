@@ -25,6 +25,7 @@ interface Building {
   needs: NeededItem[];
 }
 
+/** note that the order of keys will determine the order in the building menu */
 export const buildingData = {
   sawmill: {
     label: { en: "Sawmill", de: "Sägemühle" },
@@ -35,6 +36,19 @@ export const buildingData = {
       res_path: "res://assets/images/buzzsaw.png",
     },
     needs: [{ id: "log", amount: 5 }],
+  },
+  charcoal_kiln: {
+    label: { en: "Charcoal Kiln", de: "Köhler" },
+    id: "charcoal_kiln",
+    res_uid: "uid://dbtbfpiho8sx1",
+    icon: {
+      type: "Texture2D",
+      res_path: "res://third-party/henry_lazarini/I_Coal.png",
+    },
+    needs: [
+      { id: "plank", amount: 4 },
+      { id: "stone", amount: 10 },
+    ],
   },
   smelter: {
     label: { en: "Smelter", de: "Schmelzer" },
@@ -76,19 +90,6 @@ export const buildingData = {
       { id: "plank", amount: 10 },
       { id: "iron_ingot", amount: 4 },
       { id: "stone", amount: 20 },
-    ],
-  },
-  charcoal_kiln: {
-    label: { en: "Charcoal Kiln", de: "Köhler" },
-    id: "charcoal_kiln",
-    res_uid: "uid://dbtbfpiho8sx1",
-    icon: {
-      type: "Texture2D",
-      res_path: "res://third-party/henry_lazarini/I_Coal.png",
-    },
-    needs: [
-      { id: "plank", amount: 4 },
-      { id: "stone", amount: 10 },
     ],
   },
 } satisfies BuildingData;
