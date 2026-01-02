@@ -1,13 +1,13 @@
 [gd_scene load_steps=34 format=3 uid="uid://dnhulsx17skef"]
 
-[ext_resource type="Script" path="res://player/Player.gd" id="1_calhm"]
-[ext_resource type="Texture2D" uid="uid://daevt8ai8xoht" path="res://third-party/Elthen/DwarfSpriteSheet1.3v.png" id="2_7vbeh"]
-[ext_resource type="AudioStream" uid="uid://b6w62pkixw4fr" path="res://third-party/sounds/swings/axe-swing.mp3" id="3_b7myr"]
-[ext_resource type="Script" path="res://player/ActionRadius.gd" id="4_sw58l"]
-[ext_resource type="PackedScene" uid="uid://b14qrhy5ybx0w" path="res://common/suck_radius/suck_radius.tscn" id="6_2apq6"]
+[ext_resource type="Script" uid="uid://2i7xvgevpqmy" path="res://player/player.gd" id="1_qjkh3"]
+[ext_resource type="Texture2D" uid="uid://daevt8ai8xoht" path="res://third-party/Elthen/DwarfSpriteSheet1.3v.png" id="2_g6k8r"]
+[ext_resource type="AudioStream" uid="uid://b6w62pkixw4fr" path="res://third-party/sounds/swings/axe-swing.mp3" id="3_boad6"]
+[ext_resource type="Script" uid="uid://4qeft16wcoc1" path="res://player/ActionRadius.gd" id="4_rgyib"]
+[ext_resource type="PackedScene" uid="uid://b14qrhy5ybx0w" path="res://common/suck_radius/suck_radius.tscn" id="5_hg6s5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1hntc"]
-atlas = ExtResource("2_7vbeh")
+atlas = ExtResource("2_g6k8r")
 region = Rect2(0, 0, 512, 256)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0fogc"]
@@ -78,7 +78,7 @@ tracks/2/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("3_b7myr")
+"stream": ExtResource("3_boad6")
 }],
 "times": PackedFloat32Array(0.1)
 }
@@ -152,7 +152,7 @@ tracks/2/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("3_b7myr")
+"stream": ExtResource("3_boad6")
 }],
 "times": PackedFloat32Array(0.1)
 }
@@ -307,13 +307,13 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oyefn"]
 _data = {
-"RESET": SubResource("Animation_dkrat"),
-"attack_left": SubResource("Animation_1d0hc"),
-"attack_right": SubResource("Animation_a3qey"),
-"idle_left": SubResource("Animation_0m8cx"),
-"idle_right": SubResource("Animation_tg8q0"),
-"move_left": SubResource("Animation_wmnwf"),
-"move_right": SubResource("Animation_eidgs")
+&"RESET": SubResource("Animation_dkrat"),
+&"attack_left": SubResource("Animation_1d0hc"),
+&"attack_right": SubResource("Animation_a3qey"),
+&"idle_left": SubResource("Animation_0m8cx"),
+&"idle_right": SubResource("Animation_tg8q0"),
+&"move_left": SubResource("Animation_wmnwf"),
+&"move_right": SubResource("Animation_eidgs")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_74q37"]
@@ -400,7 +400,7 @@ graph_offset = Vector2(-181.5, 103)
 
 [node name="Player" type="CharacterBody2D" groups=["persist", "player"]]
 collision_layer = 2
-script = ExtResource("1_calhm")
+script = ExtResource("1_qjkh3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -13)
@@ -416,14 +416,14 @@ shape = SubResource("CapsuleShape2D_0fogc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_oyefn")
+&"": SubResource("AnimationLibrary_oyefn")
 }
 
 [node name="ActionRadius" type="Area2D" parent="." node_paths=PackedStringArray("reference_node")]
 visible = false
 collision_layer = 0
 collision_mask = 9
-script = ExtResource("4_sw58l")
+script = ExtResource("4_rgyib")
 reference_node = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActionRadius"]
@@ -443,7 +443,7 @@ parameters/move/blend_position = 1.0
 volume_db = -10.0
 bus = &"Sounds"
 
-[node name="SuckRadius" parent="." instance=ExtResource("6_2apq6")]
+[node name="SuckRadius" parent="." instance=ExtResource("5_hg6s5")]
 visible = false
 
 [node name="CamRemote" type="RemoteTransform2D" parent="."]
