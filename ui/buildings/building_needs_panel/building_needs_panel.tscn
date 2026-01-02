@@ -18,6 +18,7 @@ theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
 [node name="Heading" type="Label" parent="V/M"]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_type_variation = &"TitleHeading"
 text = "Smithy"
