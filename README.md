@@ -19,6 +19,12 @@ Dwarf Fortress-infused Forager.
 - [x] quests -> `quests.ts`
 - [x] data-driven approach: crafting recipes, items, building recipes, quests, resource node outputs are all defined in `.ts` files, then run `npm run datagen` (or `npm run datagen:watch`) to turn them into `.json` files. The json files are then used by game.
 
+## Glossary
+
+- item - something that gets dropped. Can be stored in the player's inventory
+- resource node - things that drop resources, for example trees and stones
+- resource - an item that is dropped by a resource node. In practice these are just items.
+
 ## Getting Started
 
 ### Prerequisites
@@ -118,12 +124,6 @@ summary:
 - set the `root/Main/Gui/PauseMenu` node's `Process.mode` to `When Paused` (in code: `Node.PROCESS_MODE_PAUSABLE`)
 - call `get_tree().paused = true # or false`
 - `pause_menu.hide()`
-
-### Glossary
-
-- item - something that gets dropped and be stored in the player's inventory
-- resource node - things that drop resources, for example trees and stones
-- resource - an item that is dropped by a resource node
 
 ### Adding a new resource
 

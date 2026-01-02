@@ -1,6 +1,6 @@
 extends GutTest
 
-const Player = preload("res://player/Player.tscn")
+const Player = preload("uid://dnhulsx17skef")
 const Sawmill = preload("res://world/buildings/sawmill/sawmill.tscn")
 
 var player: Player
@@ -30,6 +30,6 @@ func test_faces_the_building_to_interact() -> void:
 
 	player.interact()
 
-	assert_eq(player.anim_tree["parameters/idle/blend_position"], -1)
+	assert_eq(player.anim_tree["parameters/idle/blend_position"], -1.0)
 
 	player.action_radius._on_body_exited(interactable)
