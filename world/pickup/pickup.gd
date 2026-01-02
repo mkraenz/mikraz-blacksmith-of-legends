@@ -59,7 +59,7 @@ func _on_suck_cooldown_timeout():
 
 func save() -> Dictionary:
 	return {
-		"file_id": "pickup_FUwDe7",
+		"file_id": "uid://d032gr28r0n7b",
 		"parent": get_parent().get_path(),
 		"pos_x": position.x,
 		"pos_y": position.y,

@@ -68,7 +68,7 @@ func _locked_anim_finished() -> void:
 
 func save() -> Dictionary:
 	return {
-		"file_id": "player_rqXkdk",
+		"file_id": "uid://dnhulsx17skef",
 		"parent": get_parent().get_path(),
 		"pos_x": position.x,  # Vector2 is not supported by JSON
 		"pos_y": position.y,

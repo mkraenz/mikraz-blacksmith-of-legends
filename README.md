@@ -8,6 +8,17 @@
 
 Dwarf Fortress-infused Forager.
 
+## Current status
+
+- [x] player -> `player.tscn`
+- [x] resource nodes for mining -> `stone.tscn` + `resource-nodes.ts`
+  - [x] spawning resource nodes -> `resource-spawner.tscn`
+- [x] items -> `items.ts`
+- [x] crafting recipes -> `crafting-recipes.ts`
+- [x] crafting building -> `smithy.tscn` + `buildings.ts`
+- [x] quests -> `quests.ts`
+- [x] data-driven approach: crafting recipes, items, building recipes, quests, resource node outputs are all defined in `.ts` files, then run `npm run datagen` (or `npm run datagen:watch`) to turn them into `.json` files. The json files are then used by game.
+
 ## Getting Started
 
 ### Prerequisites
@@ -81,6 +92,12 @@ npm run deploy:prod
 
 - set the default theme via Project -> Theme (under GUI subheading) -> Custom -> select default theme
 
+### UIDs and imports
+
+Since Godot 4.4 every file has an associated UID either embedded inside the file (`.tscn`, `.tres`) or inside a file `filename.fileextension.uid` (e.g. `tree.gd.uid`) for `.gd` and `.shader` files. These can be used to import resources in other files without breaking when renaming the imported file. The import works just like before except using uid protocol: `const MyScene = preload("uid://1234567")`
+
+> Remember: When renaming a file, also rename the `.uid` file.
+
 ### Persistence
 
 Check `persistence.gd`. Note that JSON does not support `INF` so we added a custom parser `JSONX`. To persist floats that can be `INF` use `JSONX.stringify_float(my_float)`.
@@ -88,13 +105,9 @@ Check `persistence.gd`. Note that JSON does not support `INF` so we added a cust
 To allow a new entity to persist
 
 - add the root node to the `persist` Scene group
-- add a `func save() -> Dictionary` method to the root node's script.
-  - for the `file_id` use the pattern `<lowercase(node_name)>_${crypto.randomUUID().split('-')[0]}`
-  - if need be, add a `func load_before_ready(save_dict: Dictionary) -> void` to deserialize child nodes
-- add the root node's script to `assets/data/script.registry.ts:11`
-  - remember to run the data generation script
-
-When renaming a file, make sure to update the path in the `script.registry.ts`
+- add a `func save() -> Dictionary` method to scene's script.
+  - for the `file_id` set the Godot uid of the associated `.tscn` file. It will be used to reinialize the object with this scene on loading a save file. This also ensures compatibility with old save files when file names change.
+  - if need be, add a method `func load_before_ready(save_dict: Dictionary) -> void` to deserialize child nodes
 
 ### Pausing
 
