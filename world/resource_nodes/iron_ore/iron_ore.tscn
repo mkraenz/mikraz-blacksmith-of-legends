@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://1yjdrf40idyo"]
 
-[ext_resource type="Shader" path="res://effects/blink.gdshader" id="1_cmyh3"]
-[ext_resource type="Script" path="res://world/resource_nodes/iron_ore/iron_ore.gd" id="1_xtj8a"]
+[ext_resource type="Shader" uid="uid://x41bm7r36pqt" path="res://effects/blink.gdshader" id="1_cmyh3"]
+[ext_resource type="Script" uid="uid://cy6wutdnyxv73" path="res://world/resource_nodes/iron_ore/iron_ore.gd" id="1_xtj8a"]
 [ext_resource type="PackedScene" uid="uid://i5pg0rokc7h8" path="res://world/resource_nodes/common/healthbar/healthbar.tscn" id="2_grutw"]
 [ext_resource type="Texture2D" uid="uid://bdapxssfugeaq" path="res://world/resource_nodes/iron_ore/iron_ore.atlastex" id="3_suxqc"]
 [ext_resource type="PackedScene" uid="uid://6b2lgtejwxtv" path="res://common/Stats.tscn" id="3_txvwt"]
@@ -93,8 +93,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v1yj3"]
 _data = {
-"RESET": SubResource("Animation_6vic6"),
-"hit": SubResource("Animation_2gx2t")
+&"RESET": SubResource("Animation_6vic6"),
+&"hit": SubResource("Animation_2gx2t")
 }
 
 [node name="IronOre" type="StaticBody2D" groups=["persist"]]
@@ -120,7 +120,7 @@ max_hp = 7.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_v1yj3")
+&"": SubResource("AnimationLibrary_v1yj3")
 }
 
 [node name="Audio" type="AudioStreamPlayer2D" parent="."]
@@ -131,7 +131,7 @@ resource_node_type = "iron_ore"
 reference_node = NodePath("..")
 
 [node name="Marker" parent="." node_paths=PackedStringArray("how_to") instance=ExtResource("8_ycpb3")]
-position = Vector2(0, -6)
+position = Vector2(0, -32)
 how_to = NodePath("HowToAct")
 
 [node name="HowToAct" parent="Marker" instance=ExtResource("5_60koc")]

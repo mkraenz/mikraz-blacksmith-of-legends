@@ -13,7 +13,7 @@ shader_parameter/sensitivity = 0.0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yxfv5"]
 resource_local_to_scene = true
 shader = ExtResource("1_8t3r1")
-shader_parameter/sensitivity = 0.0
+shader_parameter/sensitivity = 1.0
 
 [sub_resource type="Animation" id="Animation_fsrip"]
 length = 0.001
@@ -54,10 +54,10 @@ tracks/1/loop_wrap = true
 tracks/1/keys = {
 "clips": [{
 "end_offset": 0.0,
-"start_offset": 0.0,
+"start_offset": 0.1,
 "stream": ExtResource("3_oxtmi")
 }],
-"times": PackedFloat32Array(-0.1)
+"times": PackedFloat32Array(0)
 }
 tracks/1/use_blend = true
 tracks/2/type = "value"
@@ -87,7 +87,6 @@ script = ExtResource("3_5us18")
 material = SubResource("ShaderMaterial_yxfv5")
 position = Vector2(0, -7)
 texture = ExtResource("3_x4ito")
-offset = Vector2(0, -8)
 
 [node name="Audio" type="AudioStreamPlayer2D" parent="."]
 bus = &"Sounds"

@@ -4,5 +4,4 @@
 
 [node name="HowToInteract" type="Sprite2D"]
 visible = false
-position = Vector2(1, -17)
 texture = ExtResource("1_tb4lm")

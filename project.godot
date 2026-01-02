@@ -23,6 +23,11 @@ GState="*res://global/GState.gd"
 GInventory="*res://global/GInventory.gd"
 QuestLog="*res://global/QuestLog.gd"
 
+[debug]
+
+gdscript/warnings/unused_signal=0
+gdscript/warnings/shadowed_global_identifier=0
+
 [display]
 
 window/size/viewport_width=640

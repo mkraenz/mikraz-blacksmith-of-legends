@@ -8,5 +8,4 @@ region = Rect2(304, 32, 16, 16)
 
 [node name="HowToAct" type="Sprite2D"]
 visible = false
-position = Vector2(0, -24)
 texture = SubResource("AtlasTexture_tks0i")

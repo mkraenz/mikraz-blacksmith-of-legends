@@ -83,7 +83,18 @@ npm run deploy:prod
 
 ### Persistence
 
-check `persistence.gd`. Note that JSON does not support `INF` so we added a custom parser `JSONX`. To persist floats that can be `INF` use `JSONX.stringify_float(my_float)`.
+Check `persistence.gd`. Note that JSON does not support `INF` so we added a custom parser `JSONX`. To persist floats that can be `INF` use `JSONX.stringify_float(my_float)`.
+
+To allow a new entity to persist
+
+- add the root node to the `persist` Scene group
+- add a `func save() -> Dictionary` method to the root node's script.
+  - for the `file_id` use the pattern `<lowercase(node_name)>_${crypto.randomUUID().split('-')[0]}`
+  - if need be, add a `func load_before_ready(save_dict: Dictionary) -> void` to deserialize child nodes
+- add the root node's script to `assets/data/script.registry.ts:11`
+  - remember to run the data generation script
+
+When renaming a file, make sure to update the path in the `script.registry.ts`
 
 ### Pausing
 
@@ -94,6 +105,20 @@ summary:
 - set the `root/Main/Gui/PauseMenu` node's `Process.mode` to `When Paused` (in code: `Node.PROCESS_MODE_PAUSABLE`)
 - call `get_tree().paused = true # or false`
 - `pause_menu.hide()`
+
+### Glossary
+
+- item - something that gets dropped and be stored in the player's inventory
+- resource node - things that drop resources, for example trees and stones
+- resource - an item that is dropped by a resource node
+
+### Adding a new resource
+
+- add a new item in `assets/data/items.ts:19` for the resource, e.g. `stone` including an image and translations
+- add a scene for the resource node - probably just copying `Stone.tscn` then changing its sprite, collision shape etc as needed
+- in `assets/data/resource-nodes.ts:18` add the new resource node and define its health and output (ie. which items to drop on destroy). Make sure that the key and id are identical.
+- set the resource node id on the resource node scene's `Mining` node in `Resource Node Type.
+- add the resource node to `resource_spawner.tscn` by adding the new resource node to its `scenes` properties. Now the resource node will get spawned every now and then.
 
 ## Assets
 
