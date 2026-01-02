@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://biedgjept2pjx" path="res://common/collision_scaler/collision_scaler.tscn" id="9_4nss5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8mb3s"]
+resource_local_to_scene = true
 shader = ExtResource("2_46crh")
 shader_parameter/active = false
 
@@ -48,6 +49,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_2gaij"]
 resource_name = "hit"
+length = 0.4
 tracks/0/type = "audio"
 tracks/0/imported = false
 tracks/0/enabled = true
