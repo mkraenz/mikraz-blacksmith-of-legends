@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-const DeathAnim = preload("res://world/resource_nodes/iron_ore/iron_ore_death.tscn")
+const DeathAnim = preload("uid://bd53gxjxm1kot")
 
 var eventbus := Eventbus
 var gstate := GState

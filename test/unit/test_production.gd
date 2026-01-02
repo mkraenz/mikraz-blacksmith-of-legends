@@ -1,6 +1,6 @@
 extends GutTest
 
-const Production = preload("res://world/buildings/common/production/production.tscn")
+const Production = preload("uid://p7ame63w6rhl")
 
 var prod: Production
 var recipe: Dictionary

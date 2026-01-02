@@ -1,6 +1,6 @@
 extends VBoxContainer
 
-const QuestLogEntry = preload("res://ui/hud/quest_log/quest_log_entry/quest_log_entry.tscn")
+const QuestLogEntry = preload("uid://gtc8aykfenjv")
 
 var gstate := GState
 

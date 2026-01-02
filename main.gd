@@ -1,7 +1,7 @@
 extends Node
 
-const Persistence = preload("res://common/persistence/persistence.gd")
-const MyCamera = preload("res://common/camera/my_camera.tscn")
+const Persistence = preload("uid://vdlluk66djr7")
+const MyCamera = preload("uid://bpmgglwruexb7")
 const Player = preload("uid://dnhulsx17skef")
 
 var eventbus := Eventbus

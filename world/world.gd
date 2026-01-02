@@ -1,6 +1,6 @@
 extends Node2D
 
-const Level = preload("res://levels/level.tscn")
+const Level = preload("uid://bi08raw4e5yar")
 const Player = preload("uid://dnhulsx17skef")
 
 @onready var cam := $Cam
