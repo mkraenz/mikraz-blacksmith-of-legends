@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ds2qodwrbmiud" path="res://ui/hud/notifications/notifications.tscn" id="1_20kht"]
 [ext_resource type="Texture2D" uid="uid://jfmr2n8kjf10" path="res://third-party/kenney/kenney-input-prompts-34x24-a-16x16.png" id="1_lmv2g"]
-[ext_resource type="Script" uid="uid://cc3a3p1sekf0h" path="res://ui/hud/build_menu_hint.gd" id="2_ojauf"]
+[ext_resource type="Script" uid="uid://cc3a3p1sekf0h" path="res://ui/hud/building_menu_hint.gd" id="2_ojauf"]
 [ext_resource type="Script" uid="uid://cxiuqy6kmhmm5" path="res://ui/inventory/toggle_menu_button.gd" id="4_yojxo"]
 [ext_resource type="PackedScene" uid="uid://daj58p4eefnw6" path="res://ui/hud/quest_log/quest_log.tscn" id="5_li6s0"]
 
