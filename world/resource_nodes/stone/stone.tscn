@@ -1,8 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://c00ecsnklwewt"]
+[gd_scene load_steps=17 format=3 uid="uid://c00ecsnklwewt"]
 
-[ext_resource type="Script" path="res://world/resource_nodes/stone/stone.gd" id="1_2onj2"]
+[ext_resource type="Script" uid="uid://cqbbftg43mn7u" path="res://world/resource_nodes/stone/stone.gd" id="1_2onj2"]
 [ext_resource type="PackedScene" uid="uid://i5pg0rokc7h8" path="res://world/resource_nodes/common/healthbar/healthbar.tscn" id="2_13jsn"]
-[ext_resource type="Shader" path="res://effects/blink.gdshader" id="2_lcvb5"]
+[ext_resource type="Shader" uid="uid://x41bm7r36pqt" path="res://effects/blink.gdshader" id="2_lcvb5"]
 [ext_resource type="PackedScene" uid="uid://6b2lgtejwxtv" path="res://common/Stats.tscn" id="3_p068t"]
 [ext_resource type="Texture2D" uid="uid://hn8myu11cgn4" path="res://world/resource_nodes/stone/stone.atlastex" id="3_rg5b6"]
 [ext_resource type="PackedScene" uid="uid://be52v685kfaec" path="res://world/resource_nodes/common/mining/mining.tscn" id="4_687jj"]
@@ -20,6 +20,33 @@ shader_parameter/active = false
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qe8db"]
 radius = 7.0
 height = 26.0
+
+[sub_resource type="Animation" id="Animation_hyma8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:material:shader_parameter/active")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0.033333335),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_cer2i"]
 resource_name = "hit"
@@ -66,7 +93,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yle6d"]
 _data = {
-"hit": SubResource("Animation_cer2i")
+&"RESET": SubResource("Animation_hyma8"),
+&"hit": SubResource("Animation_cer2i")
 }
 
 [node name="Stone" type="StaticBody2D" groups=["persist"]]
@@ -89,9 +117,9 @@ stats = NodePath("../Stats")
 
 [node name="Stats" parent="." instance=ExtResource("3_p068t")]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." groups=["persist"]]
 libraries = {
-"": SubResource("AnimationLibrary_yle6d")
+&"": SubResource("AnimationLibrary_yle6d")
 }
 
 [node name="Audio" type="AudioStreamPlayer2D" parent="."]
@@ -102,10 +130,10 @@ resource_node_type = "stone"
 reference_node = NodePath("..")
 
 [node name="Marker" parent="." node_paths=PackedStringArray("how_to") instance=ExtResource("6_uaovn")]
+position = Vector2(0, -33)
 how_to = NodePath("HowToAct")
 
 [node name="HowToAct" parent="Marker" instance=ExtResource("7_k37yo")]
-position = Vector2(0, -35)
 
 [node name="ResourceNode" parent="." node_paths=PackedStringArray("mining", "stats") instance=ExtResource("10_av8jp")]
 mining = NodePath("../Mining")

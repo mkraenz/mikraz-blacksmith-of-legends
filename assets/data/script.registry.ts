@@ -7,6 +7,10 @@ interface Script {
   res_path: `res://${string}`;
 }
 
+/** This script registry allows us to rename resources and still be able to load old save files.
+ * Since Godot v4.4 this is now inbuilt with the introduction of `.uid` files for scripts.
+ * TODO probably worth switching to godots way.
+ */
 export const scriptRegistry = {
   player_rqXkdk: {
     res_path: "res://player/Player.tscn",
@@ -43,5 +47,9 @@ export const scriptRegistry = {
   stone_ul586x: {
     res_path: "res://world/resource_nodes/stone/stone.tscn",
     id: "stone_ul586x",
+  },
+  beehive_5869a0e9: {
+    res_path: "res://world/resource_nodes/stone/stone.tscn",
+    id: "beehive_5869a0e9",
   },
 } satisfies ScriptRegistry;

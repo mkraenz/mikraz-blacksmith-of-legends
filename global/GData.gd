@@ -97,4 +97,7 @@ func _load_icon(icon: Dictionary, id: String) -> Texture2D:
 
 
 func get_resource_node(id: String) -> Dictionary:
-	return resource_nodes[id]
+	var res_node = resource_nodes.get(id)
+	if not res_node:
+		push_error("No resource node defined with id: ", id, ". Did you forget to add it to resource-nodes.ts and run the data generation script?" )
+	return res_node

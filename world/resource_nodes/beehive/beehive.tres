@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://cj30cdxnfbkwi"]
+
+[ext_resource type="Texture2D" uid="uid://b8hiayxdwmgto" path="res://third-party/kenney/tiny-town.png" id="1_gimti"]
+
+[resource]
+atlas = ExtResource("1_gimti")
+region = Rect2(160, 112, 16, 16)

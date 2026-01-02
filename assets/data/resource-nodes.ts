@@ -50,4 +50,14 @@ export const resourceNodes = {
     ],
     hp: 10,
   },
+  beehive: {
+    id: "beehive",
+    outputs: [
+      {
+        id: "honey",
+        amount: 2,
+      },
+    ],
+    hp: 20,
+  },
 } satisfies ResourceNodeData;

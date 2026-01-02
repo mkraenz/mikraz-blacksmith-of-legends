@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://btys1uystjl0u"]
 
-[ext_resource type="Script" path="res://ui/title/quit_button/quit_button.gd" id="1_kvsa5"]
+[ext_resource type="Script" uid="uid://b8s5j3k2jwfcw" path="res://ui/title/quit_button/quit_button.gd" id="1_kvsa5"]
 
 [node name="Quit" type="Button"]
 text = "Quit"

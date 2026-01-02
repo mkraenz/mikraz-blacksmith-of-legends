@@ -16,7 +16,7 @@ interface Item {
       };
 }
 
-// idea: multiple materials of the same type that get tracked when crafting other items. E.g. Spruce wood logs get turned into spruce wood planks, which then gets used to build an axe with a spruce wood
+// idea: multiple materials of the same type that get tracked when crafting other items. E.g. Spruce wood logs get turned into spruce wood planks, which then gets used to build an axe from spruce wood
 export const itemsData = {
   log: {
     label: { en: "Log", de: "Baumstamm" },
@@ -24,6 +24,14 @@ export const itemsData = {
     icon: {
       type: "Texture2D",
       res_path: "res://third-party/kenney-tiny-town/log.png",
+    },
+  },
+  honey: {
+    label: { en: "Honey", de: "Honig" },
+    id: "honey",
+    icon: {
+      type: "Texture2D",
+      res_path: "res://third-party/kenney-tiny-town/honey.png",
     },
   },
   plank: {

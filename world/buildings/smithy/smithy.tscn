@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://b43yygkrld0ry"]
 
-[ext_resource type="Script" path="res://world/buildings/smithy/smithy.gd" id="1_nmfpx"]
+[ext_resource type="Script" uid="uid://o7jmg4cv6moh" path="res://world/buildings/smithy/smithy.gd" id="1_nmfpx"]
 [ext_resource type="Texture2D" uid="uid://b1sm83ykrbdf7" path="res://third-party/HOFMC_/smithy - no shadow.png" id="2_275jx"]
 [ext_resource type="Texture2D" uid="uid://berb2cskyarnm" path="res://third-party/HOFMC_/smithy - shadows.png" id="2_wyp1x"]
 [ext_resource type="PackedScene" uid="uid://cyfyx07i1ornl" path="res://world/buildings/common/progressbar/production_progressbar.tscn" id="5_8vioc"]
@@ -79,6 +79,8 @@ position = Vector2(1, -2)
 sprite_frames = SubResource("SpriteFrames_h6lc3")
 animation = &"producing"
 autoplay = "idle"
+frame = 1
+frame_progress = 0.57518154
 
 [node name="Shape" type="CollisionShape2D" parent="."]
 position = Vector2(15, 9)
@@ -97,11 +99,10 @@ shape = SubResource("CapsuleShape2D_3a6m1")
 position = Vector2(0, 4)
 
 [node name="Marker" parent="." node_paths=PackedStringArray("how_to") instance=ExtResource("7_mi3f0")]
-position = Vector2(0, 4)
+position = Vector2(0, -40)
 how_to = NodePath("HowToInteract")
 
 [node name="HowToInteract" parent="Marker" instance=ExtResource("7_ya30g")]
-position = Vector2(1, -88)
 
 [node name="CollisionScaler" parent="." node_paths=PackedStringArray("shapes") instance=ExtResource("10_q600e")]
 shapes = [NodePath("../Shape"), NodePath("../Shape2"), NodePath("../Shape3")]
