@@ -31,7 +31,7 @@ func _on_hit(_val) -> void:
 
 func save() -> Dictionary:
 	return {
-		"file_id": "stone_ul586x",
+		"file_id": "uid://c00ecsnklwewt",
 		"parent": get_parent().get_path(),
 		"pos_x": position.x,
 		"pos_y": position.y,

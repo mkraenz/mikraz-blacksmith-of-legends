@@ -30,7 +30,7 @@ func _on_hit(_val) -> void:
 
 func save() -> Dictionary:
 	return {
-		"file_id": "beehive_5869a0e9",
+		"file_id": "uid://dlg6dpk18m4vg",
 		"parent": get_parent().get_path(),
 		"pos_x": position.x,
 		"pos_y": position.y,

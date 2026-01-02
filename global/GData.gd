@@ -7,8 +7,6 @@ var items: Dictionary
 ## @type {BuildingData}
 var buildings: Dictionary
 var version: String = "0.0.x"
-## @type {ScriptRegistry}
-var scripts: Dictionary
 ## @type {ResourceNodeData}
 var resource_nodes: Dictionary
 ## @type {Quests}
@@ -20,7 +18,6 @@ func _ready():
 	items = read_json_dict("res://assets/data/gen/items.json")
 	buildings = read_json_dict("res://assets/data/gen/buildings.json")
 	version = read_json_dict("res://package.json").version
-	scripts = read_json_dict("res://assets/data/gen/script.registry.json")
 	resource_nodes = read_json_dict("res://assets/data/gen/resource-nodes.json")
 	quests = read_json_dict("res://assets/data/gen/quests.json")
 

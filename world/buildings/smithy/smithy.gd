@@ -15,7 +15,7 @@ func interact() -> void:
 
 func save() -> Dictionary:
 	return {
-		"file_id": "smithy_2IVp6B",
+		"file_id": "uid://b43yygkrld0ry",
 		"parent": get_parent().get_path(),
 		"pos_x": position.x,
 		"pos_y": position.y,

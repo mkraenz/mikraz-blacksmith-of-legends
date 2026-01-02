@@ -91,15 +91,8 @@ func load_game(tree: SceneTree, get_tree_node: Callable):
 			const handled_keys = ["file_id", "parent", "pos_x", "pos_y", "is_autoload", "node_name"]
 
 			# Firstly, create the object and set its position.
-			var script = gdata.scripts.get(node_data["file_id"])
-			if not script:
-				push_error(
-					(
-						"Script found in save game that does not exist in the script registry. file_id: %s"
-						% node_data["file_id"]
-					)
-				)
-			var new_object = load(script.res_path).instantiate()
+			var scene_uid: String = node_data["file_id"]
+			var new_object = load(scene_uid).instantiate()
 			new_object.position = Vector2(node_data["pos_x"], node_data["pos_y"])
 
 			# Now we set the remaining variables.
