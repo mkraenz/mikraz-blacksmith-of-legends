@@ -1,6 +1,6 @@
 extends Node
 
-const Item = preload("res://common/item/item.gd")
+const Item = preload("uid://blh5ecln4xhq2")
 
 signal loading_finished
 

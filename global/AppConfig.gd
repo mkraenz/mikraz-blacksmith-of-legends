@@ -1,6 +1,6 @@
 extends Node
 
-const AudioConfig = preload("res://global/AudioConfig.gd")
+const AudioConfig = preload("uid://b6xg4b4lt5r3k")
 
 ## All kinds of configs that are relevant for the application (as opposed to a specific game setting) like audio, language, graphics, etc. Loaded on application startup.
 
@@ -29,8 +29,8 @@ func _ready() -> void:
 
 func handle_first_open() -> void:
 	var initial_locale = OS.get_locale().substr(0, 5)
-	change_locale(initial_locale)  # this one is not working for UI, but TranslationServer.get_locale() inside persist and other components already can use that value
-	call_deferred("change_locale", initial_locale)  # this actually applies the locale to the current game
+	change_locale(initial_locale) # this one is not working for UI, but TranslationServer.get_locale() inside persist and other components already can use that value
+	call_deferred("change_locale", initial_locale) # this actually applies the locale to the current game
 	persist()
 
 
@@ -56,7 +56,7 @@ func save() -> Dictionary:
 func load_from(save_dict: Dictionary) -> void:
 	audio.load_from(save_dict.audio)
 
-	change_locale(save_dict.locale)  # this one is not working for UI, but TranslationServer.get_locale() inside persist and other components already can use that value
+	change_locale(save_dict.locale) # this one is not working for UI, but TranslationServer.get_locale() inside persist and other components already can use that value
 	# WORKAROUND: for whatever reason, changing the locale immediately doesn't it apply it to the scenes.
 	call_deferred("change_locale", save_dict.locale)
 

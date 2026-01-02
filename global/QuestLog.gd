@@ -1,6 +1,6 @@
 extends Node2D
 
-const Quest = preload("res://common/quest/quest.gd")
+const Quest = preload("uid://wcwx22easrqh")
 
 signal quest_completed(quest: Quest)
 signal quest_started(quest: Quest)
@@ -48,7 +48,7 @@ func _physics_process(_delta: float) -> void:
 			continue
 
 		quest.progress = quest_data.success_conditions.map(get_progress)
-		quest_progress_updated.emit(quest)  # fixme optimization: only emit when sth actually changed
+		quest_progress_updated.emit(quest) # fixme optimization: only emit when sth actually changed
 
 		var is_completed := (quest_data.success_conditions as Array).all(
 			success_condition_fulfilled
@@ -58,7 +58,7 @@ func _physics_process(_delta: float) -> void:
 			quest.quest_completed.emit()
 			quest_completed.emit(quest)
 			var completion_signal = quest.base_data.on_complete
-			eventbus[completion_signal.signal].emit(completion_signal.signal_params)
+			eventbus[completion_signal. signal ].emit(completion_signal.signal_params)
 
 
 func success_condition_fulfilled(condition: Dictionary):

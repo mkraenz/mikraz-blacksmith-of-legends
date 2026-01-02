@@ -1,6 +1,6 @@
 extends Control
 
-const Persistence = preload("res://common/persistence/persistence.gd")
+const Persistence = preload("uid://vdlluk66djr7")
 
 @onready var eventbus := Eventbus
 @onready var continue_button := $M/H/V/Buttons/Continue
