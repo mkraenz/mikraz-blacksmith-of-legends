@@ -59,7 +59,7 @@ func _on_suck_cooldown_timeout():
 
 func save() -> Dictionary:
 	return {
-		"file_id": "uid://d032gr28r0n7b",
+		"scene_file_uid": Utils.path_to_uid(get_scene_file_path()),
 		"parent": get_parent().get_path(),
 		"pos_x": position.x,
 		"pos_y": position.y,

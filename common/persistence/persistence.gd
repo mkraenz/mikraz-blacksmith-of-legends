@@ -9,6 +9,10 @@ var gdata := GData
 var globals_to_save = [ginventory, questlog]
 
 ## largely following https://docs.godotengine.org/en/stable/tutorials/io/saving_games.html
+# However, we are using the scene files' uids instead of file paths. 
+# This makes file renames compatible with old save files
+# Also, we have additional setup to save and load child nodes. The latter being the `func load_before_ready(..) -> void`.
+# Finally, persisted autoloads are also handled manually.
 
 # remove savegame command on my ubuntu: rm "/home/mirco/.local/share/godot/app_userdata/Mikraz- Blacksmith of Legends/savegame.save"
 const FILEPATH = "user://savegame.save"
@@ -50,7 +54,7 @@ func save_game(tree: SceneTree):
 ## so that get_tree() and get_node() have the tree context set.
 func load_game(tree: SceneTree, get_tree_node: Callable):
 	if not FileAccess.file_exists(FILEPATH):
-		return  # Error! We don't have a save to load.
+		return # Error! We don't have a save to load.
 
 	# We need to revert the game state so we're not cloning objects
 	# during loading. This will vary wildly depending on the needs of a
@@ -88,10 +92,10 @@ func load_game(tree: SceneTree, get_tree_node: Callable):
 			if node_data["autoload_name"] == "QuestLog":
 				questlog.load_from(node_data)
 		else:
-			const handled_keys = ["file_id", "parent", "pos_x", "pos_y", "is_autoload", "node_name"]
+			const handled_keys = ["scene_file_uid", "parent", "pos_x", "pos_y", "is_autoload", "node_name"]
 
 			# Firstly, create the object and set its position.
-			var scene_uid: String = node_data["file_id"]
+			var scene_uid: String = node_data["scene_file_uid"]
 			var new_object = load(scene_uid).instantiate()
 			new_object.position = Vector2(node_data["pos_x"], node_data["pos_y"])
 

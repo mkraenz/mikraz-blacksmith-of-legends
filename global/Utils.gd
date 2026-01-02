@@ -26,3 +26,6 @@ static func spawn(
 
 static func random_unit_vector() -> Vector2:
 	return Vector2(randf() - 0.5, randf() - 0.5).normalized()
+
+static func path_to_uid(path: String) -> String:
+	return ResourceUID.id_to_text(ResourceLoader.get_resource_uid(path))

@@ -32,7 +32,7 @@ func bounce(_val) -> void:
 
 func save() -> Dictionary:
 	return {
-		"file_id": "uid://ck2utngryc1v",
+		"scene_file_uid": Utils.path_to_uid(get_scene_file_path()),
 		"parent": get_parent().get_path(),
 		"pos_x": position.x,
 		"pos_y": position.y,

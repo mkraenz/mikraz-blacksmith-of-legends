@@ -15,7 +15,7 @@ func interact() -> void:
 
 func save() -> Dictionary:
 	return {
-		"file_id": "uid://dbtbfpiho8sx1",
+		"scene_file_uid": Utils.path_to_uid(get_scene_file_path()),
 		"parent": get_parent().get_path(),
 		"pos_x": position.x,
 		"pos_y": position.y,

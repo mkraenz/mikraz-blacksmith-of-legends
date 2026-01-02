@@ -68,9 +68,9 @@ func _locked_anim_finished() -> void:
 
 func save() -> Dictionary:
 	return {
-		"file_id": "uid://dnhulsx17skef",
+		"scene_file_uid": Utils.path_to_uid(get_scene_file_path()),
 		"parent": get_parent().get_path(),
-		"pos_x": position.x,  # Vector2 is not supported by JSON
+		"pos_x": position.x, # Vector2 is not supported by JSON
 		"pos_y": position.y,
 		"node_name": name,
 	}
