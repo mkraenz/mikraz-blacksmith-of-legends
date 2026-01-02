@@ -58,6 +58,6 @@ export const resourceNodes = {
         amount: 2,
       },
     ],
-    hp: 20,
+    hp: 3,
   },
 } satisfies ResourceNodeData;
