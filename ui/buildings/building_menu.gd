@@ -6,6 +6,7 @@ var eventbus := Eventbus
 
 @onready var item_list: ItemList = $M/P/M/V/H/ItemList
 @onready var details = $M/P/M/V/H/BuildingNeeds
+@onready var build_button: Button = $M/P/M/V/M/BuildButton
 
 ## contrary to item_list.get_selected_indexes() this tracks disabled items
 var clicked_index = 0
@@ -34,9 +35,14 @@ func _physics_process(_delta: float) -> void:
 	for index in item_list.item_count:
 		var building = get_building(index)
 		if ginventory.satisfies_all_needs(building.needs):
-			item_list.set_item_disabled(index, false)
+			item_list.set_item_icon_modulate(index, Color.WHITE)
+			item_list.set_item_custom_fg_color(index, Color.WHITE)
 		else:
-			item_list.set_item_disabled(index, true)
+			item_list.set_item_icon_modulate(index, Color.DIM_GRAY)
+			item_list.set_item_custom_fg_color(index, Color.DIM_GRAY)
+	var selected_building = get_building(clicked_index)
+
+	build_button.disabled = not ginventory.satisfies_all_needs(selected_building.needs)
 
 
 func _on_item_list_item_activated(index: int) -> void:
