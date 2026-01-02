@@ -10,12 +10,13 @@
 - [x] Bug: cant see the required building materials for other buildings when requirements arent met. Thus dont know what to collect.
 - [x] Bug: floats display as `1.0` instead of `1` breaking crafting and build menu. introduced in godot 4.4 ([PR](https://github.com/godotengine/godot-proposals/issues/7894))
 - [x] refactor: extract more stuff from Production
+- [ ] close menus with ESC, only pause on P
 - [ ] options menu
   - [ ] key rebinding
     - [ ] choose controller ps or controller xbox or keyboard+mouse
   - [ ] graphics: toggle order details (e.g. Alt key to show order details, otherwise only show when in action radius)
 - [ ] controller support
-  - [ ] ps
+- [ ] ps
   - [ ] xbox
 - [x] localization:
   - [x] how to localize content?
@@ -27,6 +28,8 @@
   - [x] death anim for beehive
   - [x] when hitting resource node, face the resource node
     - [x] when facing left away from any resource nodes and then hitting E, the anim plays the strike to the right
+  - [ ] player strikes when building sth
+  - [x] quest log spacing of description and requirements
   - [ ] build menu icons
   - [ ] shadows -> <https://www.youtube.com/watch?v=nAZGUds9vnc>
   - [ ] sfx

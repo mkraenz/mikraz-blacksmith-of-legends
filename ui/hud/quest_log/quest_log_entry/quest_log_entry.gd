@@ -7,9 +7,7 @@ const QuestLogEntryNeededItem = preload("uid://daig4m4h8yb0m")
 var eventbus := Eventbus
 var gdata := GData
 @onready var teaser := $Teaser
-
-## @type {QuestLogEntryNeededItem[]}
-var need_item_labels := []
+@onready var needs := $Needs
 
 
 func _ready():
@@ -20,39 +18,31 @@ func _ready():
 
 
 func refresh() -> void:
-	for child in get_children():
-		if child != teaser:
-			child.queue_free()
-	need_item_labels = []
+	for child in needs.get_children():
+		child.queue_free()
 
 	teaser.text = gdata.get_localized_label(quest.base_data.teaser)
 	for need in quest.progress:
 		var label = QuestLogEntryNeededItem.instantiate()
-		label.text = "· {current_amount}/{required_amount} {item_name}".format(
-			{
-				"current_amount": need.current_amount,
-				"required_amount": need.required_amount,
-				"item_name": gdata.get_localized_item_label(need.id)
-			}
-		)
-		add_child(label)
-		need_item_labels.append(label)
-
+		_update_needs_text(label, need)
+		needs.add_child(label)
 
 func _on_progress_updated() -> void:
-	if not need_item_labels:
+	if not needs.get_children():
 		for need in quest.progress:
 			var label = QuestLogEntryNeededItem.instantiate()
-			add_child(label)
-			need_item_labels.append(label)
+			needs.add_child(label)
 
 	for i in len(quest.progress):
-		var label = need_item_labels[i]
-		var need = quest.progress[i]
+		var label = needs.get_children()[i]
+		var need: Dictionary = quest.progress[i]
+		_update_needs_text(label, need)
+
+func _update_needs_text(label, need: Dictionary) -> void:
 		label.text = "· {current_amount}/{required_amount} {item_name}".format(
 			{
-				"current_amount": need.current_amount,
-				"required_amount": need.required_amount,
+				"current_amount": int(need.current_amount),
+				"required_amount": int(need.required_amount),
 				"item_name": gdata.get_localized_item_label(need.id)
 			}
 		)
@@ -60,12 +50,12 @@ func _on_progress_updated() -> void:
 
 func _on_quest_completed() -> void:
 	for i in len(quest.progress):
-		var label = need_item_labels[i]
+		var label = needs.get_children()[i]
 		var need = quest.progress[i]
 		label.text = "~~~~~~· {current_amount}/{required_amount} {item_name}".format(
 			{
-				"current_amount": need.current_amount,
-				"required_amount": need.required_amount,
+				"current_amount": int(need.current_amount),
+				"required_amount": int(need.required_amount),
 				"item_name": gdata.get_localized_item_label(need.id)
 			}
 		)
