@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-const DeathAnim = preload("res://world/resource_nodes/tree/tree_death.tscn")
+const DeathAnim = preload("uid://50at58g2mqb1")
 
 var eventbus := Eventbus
 var gdata := GData

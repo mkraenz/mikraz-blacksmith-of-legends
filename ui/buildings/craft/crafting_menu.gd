@@ -1,7 +1,7 @@
 extends Control
 
-const ItemPanel = preload("res://ui/buildings/craft/item_panel/item_panel.tscn")
-const CancelOrderButton = preload("res://ui/buildings/craft/cancel_order_button/cancel_order.tscn")
+const ItemPanel = preload("uid://cwwx84aiwq7fa")
+const CancelOrderButton = preload("uid://c7kgb2e1ljqsh")
 
 ## type: Recipe[]
 @export var recipes: Array

@@ -1,7 +1,7 @@
 class_name ProductionOutputSpot
 extends Marker2D
 
-const Pickup = preload("res://world/pickup/pickup.tscn")
+const Pickup = preload("uid://d032gr28r0n7b")
 
 ## Outputs get spawned from on a straight horizontal line around self.global_position. This value provides the range of x values.
 @export var spawn_x_half_width: int = 10

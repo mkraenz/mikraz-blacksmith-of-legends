@@ -1,6 +1,6 @@
 extends GutTest
 
-const Sawmill = preload("res://world/buildings/sawmill/sawmill.tscn")
+const Sawmill = preload("uid://b43yygkrld0rh")
 
 var sawmill
 var recipe: Dictionary

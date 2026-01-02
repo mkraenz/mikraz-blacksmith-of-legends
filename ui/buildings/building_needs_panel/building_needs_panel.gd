@@ -1,6 +1,6 @@
 extends PanelContainer
 
-const NeededItemPanel = preload("res://ui/buildings/craft/needed_item_panel/needed_item_panel.tscn")
+const NeededItemPanel = preload("uid://wx5006y5bujo")
 
 signal building_changed
 

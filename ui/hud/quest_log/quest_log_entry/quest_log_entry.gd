@@ -1,8 +1,6 @@
 extends VBoxContainer
 
-const QuestLogEntryNeededItem = preload(
-	"res://ui/hud/quest_log/quest_log_entry/quest_log_entry_needed_item.tscn"
-)
+const QuestLogEntryNeededItem = preload("uid://daig4m4h8yb0m")
 
 @export var quest: Quest
 

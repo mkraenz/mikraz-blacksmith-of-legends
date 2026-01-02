@@ -1,7 +1,7 @@
 extends Node2D
 class_name Mining
 
-const Pickup = preload("res://world/pickup/pickup.tscn")
+const Pickup = preload("uid://d032gr28r0n7b")
 
 ## @type {keyof typeof ResourceNodeData}
 @export var resource_node_type: String

@@ -1,7 +1,7 @@
 extends GutTest
 
 const Player = preload("uid://dnhulsx17skef")
-const Sawmill = preload("res://world/buildings/sawmill/sawmill.tscn")
+const Sawmill = preload("uid://b43yygkrld0rh")
 
 var player: Player
 var gstate := GState
