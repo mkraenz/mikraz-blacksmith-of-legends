@@ -18,9 +18,9 @@ func refresh_text(crafted_amount_: float, ordered_amount_: float) -> void:
 	ordered_amount = ordered_amount_
 	if crafted_amount == 0:
 		text = tr("Craft {special_amount} ({total_amount}x)").format(
-			{special_amount = "Max", total_amount = ordered_amount}
+			{special_amount = "Max", total_amount = int(ordered_amount)}
 		)
 	elif crafted_amount == INF:
 		text = tr("Craft {special_amount}").format({special_amount = "∞"})
 	else:
-		text = tr("Craft x{amount}").format({amount = crafted_amount})
+		text = tr("Craft x{amount}").format({amount = int(crafted_amount)})

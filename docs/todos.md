@@ -7,7 +7,8 @@
 - [x] Bug: on load, notifications don't get reset
 - [x] Bug: click Continue -> Pause -> exit to title -> New game. Then the quest log is duplicated
 - [x] Bug: cancelling an order does not hide the progress bar and doesn't stop the animation
-- [ ] Bug: cant see the required building materials for other buildings when requirements arent met. Thus dont know what to collect.
+- [x] Bug: cant see the required building materials for other buildings when requirements arent met. Thus dont know what to collect.
+- [x] Bug: floats display as `1.0` instead of `1` breaking crafting and build menu. introduced in godot 4.4 ([PR](https://github.com/godotengine/godot-proposals/issues/7894))
 - [x] refactor: extract more stuff from Production
 - [ ] options menu
   - [ ] key rebinding
@@ -23,7 +24,7 @@
     - [x] buildings
     - [x] quests
 - [ ] some polish
-  - [ ] death anim for beehive
+  - [x] death anim for beehive
   - [x] when hitting resource node, face the resource node
     - [x] when facing left away from any resource nodes and then hitting E, the anim plays the strike to the right
   - [ ] build menu icons

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c6bpddw43d5e4"]
 
 [ext_resource type="PackedScene" uid="uid://wx5006y5bujo" path="res://ui/buildings/craft/needed_item_panel/needed_item_panel.tscn" id="1_oraw4"]
-[ext_resource type="Script" path="res://ui/buildings/building_needs_panel/building_needs_panel.gd" id="1_w4jqh"]
+[ext_resource type="Script" uid="uid://dxl8bus1yfhcg" path="res://ui/buildings/building_needs_panel/building_needs_panel.gd" id="1_w4jqh"]
 
 [node name="BuildingNeeds" type="PanelContainer"]
 custom_minimum_size = Vector2(128, 0)
@@ -27,7 +27,7 @@ autowrap_mode = 3
 [node name="NeedsLabel" type="Label" parent="V"]
 layout_mode = 2
 theme_type_variation = &"LabelSmall"
-text = "Needs"
+text = "Materials"
 horizontal_alignment = 1
 
 [node name="Needs" type="VBoxContainer" parent="V"]

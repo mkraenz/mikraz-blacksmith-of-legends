@@ -25,5 +25,5 @@ func refresh() -> void:
 		panel.refresh()
 
 	crafted_item_label.text = (
-		"%s x%s" % [gdata.get_localized_item_label(recipe.item_id), recipe.batch_size]
+		"%s x%d" % [gdata.get_localized_item_label(recipe.item_id), recipe.batch_size]
 	)
