@@ -12,7 +12,7 @@
 - [x] refactor: extract more stuff from Production
 - [x] close menus with ESC, only pause on P
 - [ ] without any windows open, the ESC button should open the pause menu after all - but not when there are any windows like the crafting menu open
-- [ ] interact should only trigger once
+- [x] interact should only trigger once
 - [ ] options menu
   - [ ] key rebinding
     - [ ] choose controller ps or controller xbox or keyboard+mouse

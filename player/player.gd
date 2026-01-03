@@ -81,8 +81,9 @@ func connect_camera(cam: Camera2D) -> void:
 	cam_remote.remote_path = cam.get_path()
 
 
-func _input(_event) -> void:
-	if Input.is_action_pressed("interact"):
+func _unhandled_input(_event) -> void:
+	if Input.is_action_just_pressed("interact"):
+		get_viewport().set_input_as_handled()
 		interact()
 
 
