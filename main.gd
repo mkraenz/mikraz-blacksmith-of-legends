@@ -39,7 +39,7 @@ func _input(_event):
 				unpause_game()
 
 func _unhandled_input(_event: InputEvent) -> void:
-	if Input.is_action_just_released("close"):
+	if Input.is_action_just_pressed("close"):
 		if is_ingame():
 			pause_game()
 
