@@ -10,7 +10,9 @@
 - [x] Bug: cant see the required building materials for other buildings when requirements arent met. Thus dont know what to collect.
 - [x] Bug: floats display as `1.0` instead of `1` breaking crafting and build menu. introduced in godot 4.4 ([PR](https://github.com/godotengine/godot-proposals/issues/7894))
 - [x] refactor: extract more stuff from Production
-- [ ] close menus with ESC, only pause on P
+- [x] close menus with ESC, only pause on P
+- [ ] without any windows open, the ESC button should open the pause menu after all - but not when there are any windows like the crafting menu open
+- [ ] interact should only trigger once
 - [ ] options menu
   - [ ] key rebinding
     - [ ] choose controller ps or controller xbox or keyboard+mouse

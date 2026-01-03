@@ -25,12 +25,6 @@ func refresh() -> void:
 		var index = item_list.add_item(label, icon)
 		item_list.set_item_metadata(index, building.id)
 
-
-func _input(_event):
-	if visible and Input.is_action_just_pressed("close"):
-		close_menu()
-
-
 func _physics_process(_delta: float) -> void:
 	for index in item_list.item_count:
 		var building = get_building(index)

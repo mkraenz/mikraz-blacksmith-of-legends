@@ -21,16 +21,10 @@ func _ready():
 	fill_item_list()
 	ginventory.loading_finished.connect(_on_loading_finished)
 
-
-func _input(_event):
-	if visible and Input.is_action_just_pressed("close"):
-		close_menu()
-
-
 func redraw_data() -> void:
 	for item_id in ginventory.seen_items:
 		var i = item_id_to_index.get(item_id)
-		if i == null:  # avoid i==0 being falsy
+		if i == null: # avoid i==0 being falsy
 			add_item_to_list(item_id)
 		else:
 			var inventory_item = ginventory.inventory[item_id]

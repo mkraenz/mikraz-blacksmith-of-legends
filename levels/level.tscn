@@ -354,6 +354,7 @@ autostart = true
 target_node = NodePath("..")
 
 [node name="TestObjects" parent="." instance=ExtResource("6_pb8y7")]
+destroy_on_init = false
 
 [node name="Smithy" parent="TestObjects" instance_placeholder="res://world/buildings/smithy/smithy.tscn"]
 position = Vector2(379, 249)

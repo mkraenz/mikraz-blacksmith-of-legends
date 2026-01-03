@@ -97,6 +97,7 @@ npm run deploy:prod
 ## Learnings
 
 - set the default theme via Project -> Theme (under GUI subheading) -> Custom -> select default theme
+- node2ds stay `visible` even if their parents are not visible (and thus the node itself is hidden). to get their actual visibility, use `is_visible_in_tree()`
 
 ### UIDs and imports
 

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://buknj5j72vcmc"]
+[gd_scene load_steps=7 format=3 uid="uid://buknj5j72vcmc"]
 
-[ext_resource type="Script" path="res://ui/options/options_menu.gd" id="1_7i8f7"]
+[ext_resource type="Script" uid="uid://bae865f1ds2m" path="res://ui/options/options_menu.gd" id="1_7i8f7"]
 [ext_resource type="PackedScene" uid="uid://yjnjpa3w23jx" path="res://ui/common/backdrop.tscn" id="2_lhxoi"]
-[ext_resource type="Script" path="res://ui/options/language_select.gd" id="3_5vv1n"]
+[ext_resource type="Script" uid="uid://bhut3al8838db" path="res://ui/options/language_select.gd" id="3_5vv1n"]
+[ext_resource type="PackedScene" uid="uid://cnblvsu6tnmum" path="res://ui/common/close_button/close_button.tscn" id="3_882kb"]
 [ext_resource type="PackedScene" uid="uid://d4dvwa3lk02q" path="res://ui/options/volume_range/volume_range.tscn" id="4_nbvjr"]
-[ext_resource type="Script" path="res://ui/options/credits/credits_label.gd" id="5_qvat5"]
+[ext_resource type="Script" uid="uid://bmby1n7v476d" path="res://ui/options/credits/credits_label.gd" id="5_qvat5"]
 
 [node name="OptionsMenu" type="Control"]
 layout_mode = 3
@@ -24,7 +25,7 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="Margin" type="MarginContainer" parent="."]
-layout_mode = 2
+layout_mode = 0
 offset_left = 4.0
 offset_top = 4.0
 offset_right = 636.0
@@ -51,17 +52,18 @@ size_flags_horizontal = 3
 text = "Options"
 horizontal_alignment = 1
 
-[node name="CloseButton" type="Button" parent="Margin/P/Padding/V/Header"]
+[node name="CloseButton" parent="Margin/P/Padding/V/Header" instance=ExtResource("3_882kb")]
 layout_mode = 2
-text = "X"
 
 [node name="TabContainer" type="TabContainer" parent="Margin/P/Padding/V"]
 layout_mode = 2
 size_flags_vertical = 3
 tab_alignment = 1
+current_tab = 0
 
 [node name="General" type="TabBar" parent="Margin/P/Padding/V/TabContainer"]
 layout_mode = 2
+metadata/_tab_index = 0
 
 [node name="M" type="MarginContainer" parent="Margin/P/Padding/V/TabContainer/General"]
 layout_mode = 1
@@ -82,15 +84,16 @@ size_flags_horizontal = 3
 text = "Language"
 
 [node name="LanguageSelect" type="OptionButton" parent="Margin/P/Padding/V/TabContainer/General/M/GridContainer"]
+auto_translate_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
-auto_translate = false
 alignment = 1
 script = ExtResource("3_5vv1n")
 
 [node name="Controls" type="TabBar" parent="Margin/P/Padding/V/TabContainer"]
 visible = false
 layout_mode = 2
+metadata/_tab_index = 1
 
 [node name="M" type="MarginContainer" parent="Margin/P/Padding/V/TabContainer/Controls"]
 layout_mode = 1
@@ -113,6 +116,7 @@ text = "Coming soon"
 [node name="Graphics" type="TabBar" parent="Margin/P/Padding/V/TabContainer"]
 visible = false
 layout_mode = 2
+metadata/_tab_index = 2
 
 [node name="M" type="MarginContainer" parent="Margin/P/Padding/V/TabContainer/Graphics"]
 layout_mode = 1
@@ -135,6 +139,7 @@ text = "Coming soon"
 [node name="Audio" type="TabBar" parent="Margin/P/Padding/V/TabContainer"]
 visible = false
 layout_mode = 2
+metadata/_tab_index = 3
 
 [node name="M" type="MarginContainer" parent="Margin/P/Padding/V/TabContainer/Audio"]
 layout_mode = 1
@@ -183,6 +188,7 @@ bus_name = "Music"
 [node name="Credits" type="TabBar" parent="Margin/P/Padding/V/TabContainer"]
 visible = false
 layout_mode = 2
+metadata/_tab_index = 4
 
 [node name="M" type="MarginContainer" parent="Margin/P/Padding/V/TabContainer/Credits"]
 layout_mode = 1

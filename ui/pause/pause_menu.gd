@@ -17,3 +17,8 @@ func _on_resume_pressed():
 
 func _on_save_pressed():
 	eventbus.save_game_pressed.emit()
+
+func _unhandled_input(_event: InputEvent) -> void:
+	if is_visible_in_tree() and Input.is_action_just_released("close"):
+		get_viewport().set_input_as_handled()
+		_on_resume_pressed()

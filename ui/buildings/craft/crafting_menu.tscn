@@ -1,11 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://b3ff7xd1sb0og"]
+[gd_scene load_steps=9 format=3 uid="uid://b3ff7xd1sb0og"]
 
-[ext_resource type="Script" path="res://ui/buildings/craft/crafting_menu.gd" id="2_67qoq"]
+[ext_resource type="Script" uid="uid://dfitrdbm7ytic" path="res://ui/buildings/craft/crafting_menu.gd" id="2_67qoq"]
 [ext_resource type="PackedScene" uid="uid://yjnjpa3w23jx" path="res://ui/common/backdrop.tscn" id="2_l4tro"]
 [ext_resource type="PackedScene" uid="uid://c7kgb2e1ljqsh" path="res://ui/buildings/craft/cancel_order_button/cancel_order.tscn" id="3_gu54w"]
 [ext_resource type="PackedScene" uid="uid://c78h66nde8kp4" path="res://ui/buildings/craft/recipe_details_card/recipe_details_card.tscn" id="3_kcnpb"]
 [ext_resource type="Texture2D" uid="uid://dxb80j1fcp0dr" path="res://third-party/kenney_tiny-dungeon/Tilemap/tilemap_packed.png" id="4_whwbc"]
-[ext_resource type="Script" path="res://ui/buildings/craft/craft_button.gd" id="5_81kie"]
+[ext_resource type="Script" uid="uid://3toongwvmnav" path="res://ui/buildings/craft/craft_button.gd" id="5_81kie"]
+[ext_resource type="PackedScene" uid="uid://cnblvsu6tnmum" path="res://ui/common/close_button/close_button.tscn" id="7_qktl5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a8pbh"]
 atlas = ExtResource("4_whwbc")
@@ -76,11 +77,8 @@ script = ExtResource("5_81kie")
 layout_mode = 2
 text = ">"
 
-[node name="CloseButton" type="Button" parent="M/H"]
+[node name="CloseButton" parent="M/H" instance=ExtResource("7_qktl5")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-text = "X"
 
 [connection signal="pressed" from="M/H/V/CraftButtons/CraftLessButton" to="." method="_on_craft_less_button_pressed"]
 [connection signal="pressed" from="M/H/V/CraftButtons/CraftButton" to="." method="_on_craft_button_pressed"]

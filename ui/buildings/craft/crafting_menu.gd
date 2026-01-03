@@ -25,16 +25,9 @@ var ordered_batches: float = 0.0:
 		var max_batches := ginventory.get_max_producable_batches(get_current_recipe().needs)
 		return max_batches if max_batches != 0 else 1.0
 
-
-func _input(_event):
-	if visible and Input.is_action_just_pressed("close"):
-		close_menu()
-
-
 func close_menu() -> void:
 	soft_reset()
 	hide()
-
 
 func _set_batches(val: float) -> void:
 	batches = val
@@ -76,7 +69,7 @@ func soft_reset() -> void:
 
 func _on_panel_selected(recipe_id: String) -> void:
 	selected_id = recipe_id
-	if batches == 0:  # for Craft Max we need to force recalculation of max producable batches
+	if batches == 0: # for Craft Max we need to force recalculation of max producable batches
 		batches = 0
 	recipe_details.recipe = get_current_recipe()
 	recipe_details.refresh()

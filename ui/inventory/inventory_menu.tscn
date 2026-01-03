@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ce83xqbtw77i5"]
+[gd_scene load_steps=4 format=3 uid="uid://ce83xqbtw77i5"]
 
 [ext_resource type="PackedScene" uid="uid://yjnjpa3w23jx" path="res://ui/common/backdrop.tscn" id="2_fmctf"]
-[ext_resource type="Script" path="res://ui/inventory/inventory_menu.gd" id="2_tr1jg"]
+[ext_resource type="Script" uid="uid://cmbouuauhhr3u" path="res://ui/inventory/inventory_menu.gd" id="2_tr1jg"]
+[ext_resource type="PackedScene" uid="uid://cnblvsu6tnmum" path="res://ui/common/close_button/close_button.tscn" id="3_y76t1"]
 
 [node name="InventoryMenu" type="Control" groups=["blocking"]]
 layout_mode = 3
@@ -43,11 +44,8 @@ size_flags_horizontal = 3
 text = "Inventory"
 horizontal_alignment = 1
 
-[node name="CloseButton" type="Button" parent="M/P/M/V/Header"]
+[node name="CloseButton" parent="M/P/M/V/Header" instance=ExtResource("3_y76t1")]
 layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-text = "X"
 
 [node name="ItemList" type="ItemList" parent="M/P/M/V"]
 editor_description = "Columns is set to a very high value so that it autofills the available area in a row and then wraps to the next line automaticlally."
