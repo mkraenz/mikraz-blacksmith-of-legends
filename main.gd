@@ -38,6 +38,10 @@ func _input(_event):
 			if not title_menu.visible:
 				unpause_game()
 
+func _unhandled_input(_event: InputEvent) -> void:
+	if Input.is_action_just_released("close"):
+		if is_ingame():
+			pause_game()
 
 func _on_save_game_pressed() -> void:
 	var persistence = Persistence.new()
@@ -57,7 +61,7 @@ func _on_new_game_pressed() -> void:
 
 func _on_load_game_pressed() -> void:
 	eventbus.scene_transition_hide.emit()
-	world.clear(true)  # queue_free (i.e. force=false) would cause the next two lines to instantiate under the node path '/root/Main/World/Level2' instead of 'Level'. The persistence however uses the node paths '/root/Main/World/Level/Player' etc that depend on the naming 'Level'.
+	world.clear(true) # queue_free (i.e. force=false) would cause the next two lines to instantiate under the node path '/root/Main/World/Level2' instead of 'Level'. The persistence however uses the node paths '/root/Main/World/Level/Player' etc that depend on the naming 'Level'.
 	gstate.reset()
 
 	world.setup_empty_level()
